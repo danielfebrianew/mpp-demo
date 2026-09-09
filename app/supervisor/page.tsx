@@ -32,7 +32,7 @@ export default async function SupervisorPage({ searchParams }: { searchParams: P
         <header className="flex h-18 items-center justify-between gap-4 border-b border-zinc-200 px-4 sm:px-6 lg:px-8">
           <Link href={scenarioHref('/supervisor', scenario.id)} className="interactive flex min-w-0 items-center gap-3 rounded-xl focus-visible:ring-2 focus-visible:ring-zinc-400">
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-zinc-950 text-white shadow-sm"><Landmark className="size-4.75" strokeWidth={1.8} /></span>
-            <span className="min-w-0"><span className="block truncate text-sm font-semibold tracking-[-0.01em]">MPP Kabupaten Arunika</span><span className="block text-xs text-zinc-500">Ruang supervisor</span></span>
+            <span className="min-w-0"><span className="block truncate text-sm font-semibold tracking-[-0.01em]">MPP Kabupaten Wakanda</span><span className="block text-xs text-zinc-500">Ruang supervisor</span></span>
           </Link>
 
           <nav className="hidden items-center gap-1 rounded-xl bg-zinc-100 p-1 lg:flex" aria-label="Navigasi operasional">

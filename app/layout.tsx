@@ -5,9 +5,9 @@ import { DemoNavigator } from '@/components/demo-navigator';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'MPP Kabupaten Arunika | Demo Pelayanan Publik',
+  title: 'MPP Kabupaten Wakanda | Demo Pelayanan Publik',
   description:
-    'Prototype read-only alur pelayanan dan antrean Mal Pelayanan Publik Kabupaten Arunika.',
+    'Prototype read-only alur pelayanan dan antrean Mal Pelayanan Publik Kabupaten Wakanda.',
 };
 
 export default function RootLayout({

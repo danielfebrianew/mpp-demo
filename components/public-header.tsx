@@ -28,9 +28,9 @@ export function PublicHeader() {
   return (
     <header className="border-b border-zinc-200 bg-white px-4 sm:px-6 lg:px-8">
       <div className="mx-auto flex h-18 max-w-350 items-center justify-between gap-5">
-        <Link href={scenarioHref('/', scenario.id)} className="interactive flex min-w-0 items-center gap-3 rounded-xl focus-visible:ring-2 focus-visible:ring-zinc-400" aria-label="Beranda MPP Arunika">
+        <Link href={scenarioHref('/', scenario.id)} className="interactive flex min-w-0 items-center gap-3 rounded-xl focus-visible:ring-2 focus-visible:ring-zinc-400" aria-label="Beranda MPP Wakanda">
           <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-zinc-950 text-white shadow-sm"><Landmark className="size-4.75" strokeWidth={1.8} /></span>
-          <span className="min-w-0"><span className="block truncate text-sm font-semibold tracking-[-0.01em]">MPP Kabupaten Arunika</span><span className="block text-xs text-zinc-500">Portal pelayanan warga</span></span>
+          <span className="min-w-0"><span className="block truncate text-sm font-semibold tracking-[-0.01em]">MPP Kabupaten Wakanda</span><span className="block text-xs text-zinc-500">Portal pelayanan warga</span></span>
         </Link>
 
         <nav className="hidden items-center gap-1 rounded-xl bg-zinc-100 p-1 lg:flex" aria-label="Navigasi utama">

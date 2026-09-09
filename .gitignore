@@ -17,9 +17,9 @@
 /out/
 *.tsbuildinfo
 
-# legacy local build state
-/.vinext/
-/.wrangler/
+# local agent tooling
+/.agents/
+/skills-lock.json
 
 # misc
 .DS_Store

@@ -39,7 +39,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
               <div>
                 <span className="inline-flex items-center gap-2 rounded-lg bg-orange-50 px-3 py-2 text-xs font-medium text-orange-700"><Sparkles className="size-3.5" /> Pelayanan publik terpadu</span>
                 <h1 className="mt-7 max-w-[13ch] text-5xl font-semibold leading-[0.94] tracking-[-0.055em] text-balance sm:text-6xl xl:text-[4.75rem]">Satu gedung. Urusan lebih singkat.</h1>
-                <p className="mt-6 max-w-[42ch] text-base leading-7 text-zinc-500 sm:text-lg">Periksa syarat, lokasi loket, dan kondisi antrean sebelum berangkat ke MPP Kabupaten Arunika.</p>
+                <p className="mt-6 max-w-[42ch] text-base leading-7 text-zinc-500 sm:text-lg">Periksa syarat, lokasi loket, dan kondisi antrean sebelum berangkat ke MPP Kabupaten Wakanda.</p>
                 <div className="mt-8 flex flex-wrap items-center gap-4">
                   <Link href={scenarioHref('/layanan', scenario.id)} className="interactive inline-flex min-h-12 items-center gap-3 rounded-xl bg-zinc-950 px-5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(24,24,27,0.16)] hover:bg-zinc-800">Cari layanan <Search className="size-4" strokeWidth={1.9} /></Link>
                   <Link href={scenarioHref('/kiosk', scenario.id)} className="interactive inline-flex items-center gap-2 px-1 text-sm font-medium text-zinc-600 hover:text-zinc-950">Lihat alur antrean <ArrowRight className="size-4" /></Link>
@@ -116,7 +116,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
         </section>
 
         <footer className="px-4 pb-8 pt-2 text-xs text-zinc-500 sm:px-6 lg:px-8">
-          <div className="mx-auto flex max-w-350 flex-col justify-between gap-3 border-t border-zinc-200 pt-6 sm:flex-row"><span>MPP Kabupaten Arunika · Snapshot “{scenario.label}”</span><span>Bukan layanan pemerintah sebenarnya.</span></div>
+          <div className="mx-auto flex max-w-350 flex-col justify-between gap-3 border-t border-zinc-200 pt-6 sm:flex-row"><span>MPP Kabupaten Wakanda · Snapshot “{scenario.label}”</span><span>Bukan layanan pemerintah sebenarnya.</span></div>
         </footer>
       </div>
     </main>

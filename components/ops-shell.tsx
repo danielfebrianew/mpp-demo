@@ -26,7 +26,7 @@ export function OpsShell({ title, eyebrow, children }: { title: string; eyebrow:
         <div className="mx-auto flex h-17 max-w-375 items-center justify-between gap-5 px-4 sm:px-6 lg:px-8">
           <Link href="/" className="interactive flex shrink-0 items-center gap-3">
             <span className="grid size-9 place-items-center bg-[#1848c7]"><Landmark className="size-4.5" strokeWidth={1.7} /></span>
-            <span className="hidden sm:block"><span className="block text-[10px] tracking-[0.12em] text-[#9eaaa7]">MPP ARUNIKA</span><span className="block text-sm">Ruang operasional</span></span>
+            <span className="hidden sm:block"><span className="block text-[10px] tracking-[0.12em] text-[#9eaaa7]">MPP WAKANDA</span><span className="block text-sm">Ruang operasional</span></span>
           </Link>
 
           <nav className="flex h-full min-w-0 items-center gap-1 overflow-x-auto" aria-label="Navigasi operasional">

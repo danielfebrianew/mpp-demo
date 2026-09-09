@@ -78,7 +78,7 @@ export default async function KioskPage({ searchParams }: { searchParams: Promis
               <Landmark className="size-4.75" strokeWidth={1.8} />
             </span>
             <span className="min-w-0">
-              <span className="block truncate text-sm font-semibold tracking-[-0.01em]">MPP Kabupaten Arunika</span>
+              <span className="block truncate text-sm font-semibold tracking-[-0.01em]">MPP Kabupaten Wakanda</span>
               <span className="block text-xs text-zinc-500">Kiosk layanan mandiri</span>
             </span>
           </Link>

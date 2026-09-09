@@ -1,6 +1,6 @@
-# MPP Kabupaten Arunika
+# MPP Kabupaten Wakanda
 
-Prototype read-only untuk alur pelayanan Mal Pelayanan Publik Kabupaten Arunika. Aplikasi ini memperlihatkan perjalanan warga dari portal dan kiosk hingga tiket digital, serta layar operasional untuk operator, display antrean, supervisor, dan admin.
+Prototype read-only untuk alur pelayanan Mal Pelayanan Publik Kabupaten Wakanda. Aplikasi ini memperlihatkan perjalanan warga dari portal dan kiosk hingga tiket digital, serta layar operasional untuk operator, display antrean, supervisor, dan admin.
 
 ## Fitur
 

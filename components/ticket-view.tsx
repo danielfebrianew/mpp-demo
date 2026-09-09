@@ -26,7 +26,7 @@ export function TicketView({ number, scenarioId }: { number: string; scenarioId?
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-zinc-950 text-white shadow-sm">
               <Landmark className="size-4.5" strokeWidth={1.8} />
             </span>
-            <span className="min-w-0"><span className="block truncate text-sm font-semibold">MPP Kabupaten Arunika</span><span className="block text-xs text-zinc-500">Tiket antrean digital</span></span>
+            <span className="min-w-0"><span className="block truncate text-sm font-semibold">MPP Kabupaten Wakanda</span><span className="block text-xs text-zinc-500">Tiket antrean digital</span></span>
           </Link>
           <Link href={scenarioHref('/kiosk', scenario.id)} className="interactive grid size-10 shrink-0 place-items-center rounded-xl border border-zinc-200 bg-white text-zinc-500 hover:bg-zinc-100 hover:text-zinc-950" aria-label="Kembali ke kiosk">
             <ArrowLeft className="size-4.5" />

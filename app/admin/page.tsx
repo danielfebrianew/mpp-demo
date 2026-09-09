@@ -93,7 +93,7 @@ function AdminSidebar({ scenario }: { scenario: ScenarioSnapshot }) {
       <SidebarHeader className="gap-4 border-b p-4">
         <Link href={scenarioHref('/admin', scenario.id)} className="flex h-10 items-center gap-3 px-1 group-data-[collapsible=icon]:justify-center">
           <span className="grid size-9 place-items-center rounded-lg bg-zinc-950 text-white"><Landmark className="size-4.5" /></span>
-          <span className="min-w-0 group-data-[collapsible=icon]:hidden"><span className="block text-sm font-semibold text-zinc-950">MPP Arunika</span><span className="block text-xs text-zinc-500">Pusat administrasi</span></span>
+          <span className="min-w-0 group-data-[collapsible=icon]:hidden"><span className="block text-sm font-semibold text-zinc-950">MPP Wakanda</span><span className="block text-xs text-zinc-500">Pusat administrasi</span></span>
         </Link>
         <div className="relative group-data-[collapsible=icon]:hidden">
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-zinc-400" />
@@ -253,7 +253,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
             <div className="flex items-center gap-3">
               <SidebarTrigger className="size-9" />
               <span className="h-5 w-px bg-border" />
-              <Button variant="ghost" className="hidden gap-2 px-2 sm:inline-flex"><span className="size-2.5 rounded-full bg-orange-500" /> MPP Arunika <ChevronDown data-icon="inline-end" /></Button>
+              <Button variant="ghost" className="hidden gap-2 px-2 sm:inline-flex"><span className="size-2.5 rounded-full bg-orange-500" /> MPP Wakanda <ChevronDown data-icon="inline-end" /></Button>
               <span className="text-sm font-semibold sm:hidden">MPP Admin</span>
             </div>
             <div className="flex items-center gap-1">

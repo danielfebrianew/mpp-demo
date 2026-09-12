@@ -27,14 +27,12 @@ import {
   type Scenario,
   type getScenarioServices,
 } from '@/lib/mpp-data';
+import {
+  isPublicNavigationActive,
+  publicNavigation,
+} from '@/lib/public-navigation';
+import { matchesServiceQuery } from '@/lib/service-search';
 import styles from '@/app/home.module.css';
-
-const navigation = [
-  { href: '/#beranda', label: 'Beranda', section: 'beranda' },
-  { href: '/#layanan', label: 'Layanan', section: 'layanan' },
-  { href: '/#panduan', label: 'Panduan kunjungan', section: 'panduan' },
-  { href: '/#kunjungan', label: 'Lokasi & jam', section: 'kunjungan' },
-] as const;
 
 const visitSteps = [
   {
@@ -150,35 +148,8 @@ export function PublicFooter({
 
 export function HomeHeader({ scenario }: { scenario: Scenario }) {
   const pathname = usePathname();
-  const isHome = pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState(isHome ? 'beranda' : '');
   const menuButton = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!isHome) return;
-
-    const sections = navigation
-      .map((item) => document.getElementById(item.section))
-      .filter((section): section is HTMLElement => Boolean(section));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-        if (visible[0]?.target.id) setActiveSection(visible[0].target.id);
-      },
-      {
-        rootMargin: '-18% 0px -58% 0px',
-        threshold: [0, 0.1, 0.25, 0.5],
-      },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, [isHome]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -203,14 +174,13 @@ export function HomeHeader({ scenario }: { scenario: Scenario }) {
         </span>
       </Link>
       <nav aria-label="Navigasi utama" className={styles.desktopNav}>
-        {navigation.map((item) => (
+        {publicNavigation.map((item) => (
           <Link
             key={item.href}
             href={scenarioHref(item.href, scenario)}
             aria-current={
-              isHome && item.section === activeSection ? 'location' : undefined
+              isPublicNavigationActive(pathname, item) ? 'page' : undefined
             }
-            onClick={() => setActiveSection(item.section)}
           >
             {item.label}
           </Link>
@@ -241,19 +211,14 @@ export function HomeHeader({ scenario }: { scenario: Scenario }) {
           aria-label="Navigasi seluler"
           className={styles.mobileNav}
         >
-          {navigation.map((item) => (
+          {publicNavigation.map((item) => (
             <Link
               key={item.href}
               href={scenarioHref(item.href, scenario)}
               aria-current={
-                isHome && item.section === activeSection
-                  ? 'location'
-                  : undefined
+                isPublicNavigationActive(pathname, item) ? 'page' : undefined
               }
-              onClick={() => {
-                setActiveSection(item.section);
-                setMenuOpen(false);
-              }}
+              onClick={() => setMenuOpen(false)}
             >
               {item.label}
               <ArrowUpRight aria-hidden="true" />
@@ -285,23 +250,8 @@ export function HomeHero({
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const input = useRef<HTMLInputElement>(null);
-  const tokens = query
-    .trim()
-    .toLocaleLowerCase('id')
-    .split(/\s+/)
-    .filter(Boolean);
-  const aliases: Record<string, string> = {
-    'perubahan-kartu-keluarga': 'kk keluarga',
-    'konsultasi-nib': 'izin usaha bisnis oss',
-    'pajak-bumi-bangunan': 'pbb pajak rumah',
-    'kepesertaan-bpjs': 'bpjs jaminan kesehatan kis',
-  };
   const results = services.filter((service) =>
-    tokens.every((token) =>
-      `${service.name} ${service.agency} ${aliases[service.slug] ?? ''}`
-        .toLocaleLowerCase('id')
-        .includes(token),
-    ),
+    matchesServiceQuery(service, query),
   );
 
   return (
@@ -349,13 +299,8 @@ export function HomeHero({
               setOpen(false);
           }}
         >
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-              setOpen(true);
-            }}
-            className={styles.heroSearch}
-          >
+          <form action="/layanan" method="get" className={styles.heroSearch}>
+            <input type="hidden" name="scenario" value={scenario} />
             <Search aria-hidden="true" />
             <label htmlFor="home-service-search" className={styles.srOnly}>
               Layanan apa yang Anda butuhkan?
@@ -363,6 +308,7 @@ export function HomeHero({
             <input
               ref={input}
               id="home-service-search"
+              name="query"
               type="search"
               autoComplete="off"
               onKeyDown={(event) => {
@@ -408,7 +354,7 @@ export function HomeHero({
                     <li key={service.slug}>
                       <Link
                         href={scenarioHref(
-                          `/layanan/${service.slug}`,
+                          `/layanan?query=${encodeURIComponent(service.name)}`,
                           scenario,
                         )}
                       >
@@ -436,15 +382,15 @@ export function HomeHero({
         </search>
         <div className={styles.heroShortcuts}>
           <span>Sering dicari:</span>
-          <Link href={scenarioHref('/layanan/perekaman-ktp', scenario)}>
+          <Link href={scenarioHref('/layanan?query=KTP-el', scenario)}>
             KTP-el
           </Link>
           <Link
-            href={scenarioHref('/layanan/perubahan-kartu-keluarga', scenario)}
+            href={scenarioHref('/layanan?query=Kartu%20Keluarga', scenario)}
           >
             Kartu Keluarga
           </Link>
-          <Link href={scenarioHref('/layanan/konsultasi-nib', scenario)}>
+          <Link href={scenarioHref('/layanan?query=Izin%20usaha', scenario)}>
             Izin usaha
           </Link>
         </div>

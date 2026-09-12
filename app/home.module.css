@@ -531,9 +531,10 @@
   min-height: 274px;
 }
 .serviceCard:hover {
-  background: var(--home-card-gradient);
   border-color: #99beb5;
-  box-shadow: 0 14px 30px #28665d12;
+  box-shadow:
+    inset 0 1px 0 var(--home-highlight),
+    0 14px 30px #28665d12;
   transform: translateY(-5px);
 }
 .cardTop {
@@ -577,6 +578,18 @@
   color: #ffffff;
   background: linear-gradient(145deg, #ffffff26, #ffffff0d);
   box-shadow: inset 0 1px 0 #ffffff30;
+}
+.previewLabel {
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: var(--home-accent-soft);
+  color: var(--home-accent-hover);
+  font-size: 10px;
+  font-weight: 650;
+}
+.serviceCardFeatured .previewLabel {
+  background: #ffffff17;
+  color: #ffffff;
 }
 .headerCta:active,
 .primaryButton:active,

@@ -111,14 +111,17 @@ export default async function Home({
               return (
                 <Reveal key={service.slug} delay={index * 0.04}>
                   <Link
-                    href={scenarioHref(`/layanan/${service.slug}`, scenario.id)}
+                    href={scenarioHref(
+                      `/layanan?query=${encodeURIComponent(service.name)}`,
+                      scenario.id,
+                    )}
                     className={`${styles.serviceCard} ${index === 0 ? styles.serviceCardFeatured : ''}`}
                   >
                     <div className={styles.cardTop}>
                       <span className={styles.serviceIcon}>
                         <Icon aria-hidden="true" />
                       </span>
-                      <ArrowUpRight aria-hidden="true" />
+                      <span className={styles.previewLabel}>Populer</span>
                     </div>
                     <span className={styles.agencyLabel}>{service.agency}</span>
                     <h3>{service.name}</h3>
@@ -127,7 +130,7 @@ export default async function Home({
                       {service.fee}
                     </p>
                     <span className={styles.cardAction}>
-                      Lihat persyaratan <ArrowRight aria-hidden="true" />
+                      Buka di direktori <ArrowRight aria-hidden="true" />
                     </span>
                   </Link>
                 </Reveal>
@@ -138,7 +141,7 @@ export default async function Home({
             href={scenarioHref('/layanan', scenario.id)}
             className={styles.directoryLink}
           >
-            Lihat semua layanan <ArrowRight aria-hidden="true" />
+            Buka direktori layanan <ArrowRight aria-hidden="true" />
           </Link>
         </section>
         <section

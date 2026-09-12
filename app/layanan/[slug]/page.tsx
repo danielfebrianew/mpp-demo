@@ -99,7 +99,7 @@ export default async function ServiceDetailPage({ params, searchParams }: { para
                   <p className="flex items-center justify-between gap-4"><span className="flex items-center gap-2 text-zinc-500"><MapPin className="size-4" /> Lokasi</span><strong className="font-semibold">{service.floor}</strong></p>
                 </div>
 
-                <Link href={scenarioHref('/kiosk', scenario.id)} className="interactive mt-6 flex min-h-12 items-center justify-between rounded-xl bg-zinc-950 px-4 text-sm font-semibold text-white hover:bg-zinc-800">Preview antrean <ArrowRight className="size-4" /></Link>
+                <Link href={scenarioHref('/#kunjungan', scenario.id)} className="interactive mt-6 flex min-h-12 items-center justify-between rounded-xl bg-zinc-950 px-4 text-sm font-semibold text-white hover:bg-zinc-800">Panduan kunjungan <ArrowRight className="size-4" /></Link>
                 <p className="mt-4 flex items-start gap-2 text-xs leading-5 text-zinc-500"><Check className="mt-0.5 size-3.5 shrink-0 text-emerald-600" /> Mode demo tidak menyimpan atau mengirim data.</p>
               </div>
             </aside>

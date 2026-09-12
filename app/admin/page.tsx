@@ -8,16 +8,12 @@ import {
   ChevronDown,
   CircleGauge,
   Download,
-  Home,
   Landmark,
   LayoutDashboard,
-  Monitor,
   MonitorSmartphone,
   MoreHorizontal,
-  ScanLine,
   Search,
   ShieldCheck,
-  Ticket,
   UserRoundCog,
   Users,
 } from 'lucide-react';
@@ -53,13 +49,6 @@ const operationsNavigation = [
   { label: 'Dashboard admin', href: '/admin', icon: LayoutDashboard, active: true },
   { label: 'Operator loket', href: '/operator', icon: UserRoundCog },
   { label: 'Supervisor', href: '/supervisor', icon: CircleGauge },
-  { label: 'Display antrean', href: '/display', icon: Monitor },
-];
-
-const citizenNavigation = [
-  { label: 'Portal warga', href: '/', icon: Home },
-  { label: 'Kiosk antrean', href: '/kiosk', icon: ScanLine },
-  { label: 'Tiket warga', href: '/ticket/A-023', icon: Ticket },
 ];
 
 type AdminMetric = { label: string; value: string; detail: string; trend: string; icon: LucideIcon; positive: boolean };
@@ -120,23 +109,6 @@ function AdminSidebar({ scenario }: { scenario: ScenarioSnapshot }) {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarGroup>
-          <SidebarGroupLabel>Layanan warga</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {citizenNavigation.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <SidebarMenuItem key={item.label}>
-                    <SidebarMenuButton render={<Link href={scenarioHref(item.href, scenario.id)} />} tooltip={item.label} className="h-10 px-3">
-                      <Icon /><span>{item.label}</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
       </SidebarContent>
 
       <SidebarFooter className="p-4 group-data-[collapsible=icon]:p-2">

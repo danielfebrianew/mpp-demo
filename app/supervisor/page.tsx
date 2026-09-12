@@ -39,7 +39,6 @@ export default async function SupervisorPage({ searchParams }: { searchParams: P
             <Link href={scenarioHref('/operator', scenario.id)} className="interactive rounded-lg px-4 py-2 text-sm text-zinc-500 hover:bg-white hover:text-zinc-950">Operator</Link>
             <Link href={scenarioHref('/supervisor', scenario.id)} aria-current="page" className="rounded-lg bg-white px-4 py-2 text-sm font-medium text-zinc-950 shadow-sm">Supervisor</Link>
             <Link href={scenarioHref('/admin', scenario.id)} className="interactive rounded-lg px-4 py-2 text-sm text-zinc-500 hover:bg-white hover:text-zinc-950">Konfigurasi</Link>
-            <Link href={scenarioHref('/display', scenario.id)} className="interactive rounded-lg px-4 py-2 text-sm text-zinc-500 hover:bg-white hover:text-zinc-950">Display publik</Link>
           </nav>
 
           <div className="flex items-center gap-2">

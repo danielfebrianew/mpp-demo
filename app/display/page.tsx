@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import {
-  ArrowUpRight,
   BellRing,
   Clock3,
   Landmark,
@@ -117,9 +116,9 @@ export default async function DisplayPage({ searchParams }: { searchParams: Prom
                 </div>
               </section>
 
-              <Link href={scenarioHref('/supervisor', scenario.id)} className="interactive mt-auto flex min-h-14 items-center justify-between rounded-2xl border border-zinc-200 bg-zinc-50 px-5 text-sm font-medium text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">
-                Dashboard supervisor <ArrowUpRight className="size-4.5" />
-              </Link>
+              <p className="mt-auto rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4 text-sm text-zinc-500">
+                Perubahan display dikelola dari perangkat operasional.
+              </p>
             </aside>
           </section>
         </div>

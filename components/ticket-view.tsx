@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import {
-  ArrowLeft,
-  ArrowUpRight,
   Check,
   Clock3,
   Info,
@@ -21,15 +19,12 @@ export function TicketView({ number, scenarioId }: { number: string; scenarioId?
   return (
     <main id="main-content" className="admin-dashboard min-h-dvh bg-[#f4f4f5] px-3 py-4 pb-28 text-zinc-950 sm:px-5 sm:py-7 sm:pb-32">
       <div className="mx-auto max-w-130">
-        <header className="mb-4 flex items-center justify-between gap-4 px-1">
+        <header className="mb-4 px-1">
           <Link href={scenarioHref('/', scenario.id)} className="interactive flex min-w-0 items-center gap-3 rounded-xl text-zinc-700 hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-zinc-400">
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-zinc-950 text-white shadow-sm">
               <Landmark className="size-4.5" strokeWidth={1.8} />
             </span>
             <span className="min-w-0"><span className="block truncate text-sm font-semibold">MPP Kabupaten Wakanda</span><span className="block text-xs text-zinc-500">Tiket antrean digital</span></span>
-          </Link>
-          <Link href={scenarioHref('/kiosk', scenario.id)} className="interactive grid size-10 shrink-0 place-items-center rounded-xl border border-zinc-200 bg-white text-zinc-500 hover:bg-zinc-100 hover:text-zinc-950" aria-label="Kembali ke kiosk">
-            <ArrowLeft className="size-4.5" />
           </Link>
         </header>
 
@@ -87,10 +82,6 @@ export function TicketView({ number, scenarioId }: { number: string; scenarioId?
             <div><h2 className="text-sm font-semibold">Dokumen siap diperiksa</h2><p className="mt-1 text-xs leading-5 text-zinc-500">Siapkan Kartu Keluarga asli dan perhatikan display antrean.</p></div>
           </div>
         </section>
-
-        <Link href={scenarioHref('/operator', scenario.id)} className="interactive mt-4 flex min-h-13 items-center justify-between rounded-2xl bg-zinc-950 px-5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(24,24,27,0.16)] hover:bg-zinc-800">
-          Lihat sisi operator <ArrowUpRight className="size-4.5" />
-        </Link>
 
         <p className="mt-5 text-center text-[11px] leading-5 text-zinc-400">Tiket demo · Data tidak disimpan atau dikirim.</p>
       </div>

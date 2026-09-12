@@ -19,6 +19,7 @@
 
 # local agent tooling
 /.agents/
+/.openai/
 /skills-lock.json
 
 # misc
@@ -42,3 +43,6 @@ yarn-error.log*
 /dist/
 /outputs/
 /work/
+
+# Local design notes (kept outside version control)
+/docs/

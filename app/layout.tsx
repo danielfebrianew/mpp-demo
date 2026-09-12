@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import '@fontsource-variable/plus-jakarta-sans';
-import { DemoNavigator } from '@/components/demo-navigator';
+import { DemoNavigator } from '@/app/_components/demo-navigator';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" data-scroll-behavior="smooth">
       <body className="antialiased">
         <a className="skip-link" href="#main-content">Langsung ke konten</a>
         {children}

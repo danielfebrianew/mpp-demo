@@ -330,8 +330,11 @@ export function getScenarioCounters(value: string | string[] | null | undefined)
 }
 
 export function scenarioHref(href: string, scenario: Scenario) {
-  const separator = href.includes('?') ? '&' : '?';
-  return `${href}${separator}scenario=${scenario}`;
+  const hashIndex = href.indexOf('#');
+  const path = hashIndex >= 0 ? href.slice(0, hashIndex) : href;
+  const hash = hashIndex >= 0 ? href.slice(hashIndex) : '';
+  const separator = path.includes('?') ? '&' : '?';
+  return `${path}${separator}scenario=${scenario}${hash}`;
 }
 
 export function getScenarioCopy(scenario: string) {
